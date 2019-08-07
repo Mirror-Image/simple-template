@@ -71,7 +71,6 @@
       }
 
       &__article {
-        //width: 496px;
         flex: 1 0 calc(100% - 250px);
         padding: $gap $gap * 2 $gap $gap;
         flex-grow: 1;
@@ -187,7 +186,6 @@
 
     &__item-left {
       padding: $gap + 5px $gap $gap + 10px;
-      //width: 380px;
       position: relative;
       flex: 1 0 50%;
       border: 5px solid #ffffff;
@@ -228,7 +226,6 @@
 
     &__item-right {
       padding: $gap + 5px $gap $gap + 10px;
-      //width: 380px;
       flex: 1 0 50%;
       display: flex;
       align-items: flex-start;

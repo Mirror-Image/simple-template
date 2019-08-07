@@ -28,7 +28,7 @@
 
       }
 
-      &-row {
+      &__row {
         position: relative;
         width: 60%;
         height: 2px;
@@ -37,7 +37,7 @@
         transition: all 0.5s;
       }
 
-      &.active .header-menu-mobile-row {
+      &.active .header-menu-mobile__row {
         &:first-of-type {
           top: 6px;
           transform: rotate(-135deg);
@@ -60,7 +60,10 @@
       justify-content: flex-end;
 
       @include max-lg {
-        display: none;
+        position: absolute;
+        top: 100%;
+        opacity: 0;
+        transition: opacity 0.5s;
       }
 
       &.active {
@@ -70,12 +73,12 @@
           top: 70px;
           right: 0;
           left: 0;
-          display: flex;
           width: 100%;
           flex-direction: column;
           text-align: center;
           z-index: 3;
           background-color: rgba(0, 0, 0, 0.8);
+          opacity: 1;
         }
       }
 
