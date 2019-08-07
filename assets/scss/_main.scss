@@ -1,0 +1,257 @@
+.main {
+  padding: $gap;
+  margin-bottom: $gap * 3 + 5px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &-slider {
+    position: relative;
+    padding: $gap;
+    width: 100%;
+    background-color: $light-color;
+
+    &-controls {
+
+      &__previous {
+        position: absolute;
+        left: 2px;
+        bottom: calc(50% - 18px);
+        z-index: 2;
+      }
+
+      &__next {
+        position: absolute;
+        transform: scale(-1, 1);
+        right: 2px;
+        bottom: calc(50% - 18px);
+        z-index: 2;
+      }
+    }
+
+    &-items {
+      position: relative;
+    }
+
+    &-item {
+      position: absolute;
+      top: 0;
+      background-image: url(../img/carousel-item-bg.png);
+      border: 7px solid #ffffff;
+      z-index: 0;
+      opacity: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      box-shadow: 0 0 1px #e4e4e4;
+
+      &.active {
+        position: relative;
+        z-index: 1;
+        opacity: 1;
+        transition: 0.5s opacity;
+      }
+
+      @include max-md {
+        flex-direction: column;
+        background-image: url(../img/carousel-item-bg.png);
+        background-size: cover;
+      }
+
+      &__image {
+        padding: $gap;
+        flex: 0 0 250px;
+
+        @include max-md {
+          flex: 0 0 100%;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      &__article {
+        //width: 496px;
+        flex: 1 0 calc(100% - 250px);
+        padding: $gap $gap * 2 $gap $gap;
+        flex-grow: 1;
+
+        @include max-md {
+          padding-top: 0;
+          flex: 0 0 100%;
+        }
+
+        h3 {
+          margin: $gap 0;
+          color: $light-color;
+
+          @include max-md {
+            margin-top: 0;
+            text-align: center;
+          }
+        }
+
+        p {
+          color: $light-color;
+          text-align: justify;
+          line-height: 1.5;
+
+          @include max-md {
+            margin: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  &-article {
+    padding: 0 $gap + 5px $gap $gap;
+    flex: 1 0 calc(100% - 300px);
+    background-color: $light-color;
+
+    @include max-md {
+      padding: $gap + 5;
+      flex: 1 0 100%;
+      order: 0;
+    }
+  }
+
+  &-aside {
+    padding: 0 $gap $gap $gap + 5px;
+    flex: 0 0 300px;
+    position: relative;
+    background-color: $light-color;
+
+    @include max-md {
+      padding: 0 $gap + 5 $gap + 5;
+      flex: 1 0 100%;
+      order: 1;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: $gap;
+      right: 0;
+      height: 90%;
+      border-right: 1px solid #dddddd;
+
+      @include max-md {
+        content: none;
+      }
+    }
+
+    &-list {
+      padding-left: 20px;
+      list-style: none;
+
+      li {
+        position: relative;
+        padding: $gap / 2;
+        color: #858585;
+        font-style: italic;
+
+        &:before {
+          content: url("../img/main-list-arrow.png");
+          margin-right: $gap / 2;
+        }
+
+        span {
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            border-bottom: 1px solid #dddddd;
+          }
+        }
+      }
+    }
+  }
+
+  &-bottom-blocks {
+    flex: 1 0 100%;
+    display: flex;
+    padding: $gap;
+    background-color: $light-color;
+
+    @include max-md {
+      flex-direction: column;
+      order: 2;
+    }
+
+    &__item-left {
+      padding: $gap + 5px $gap $gap + 10px;
+      //width: 380px;
+      position: relative;
+      flex: 1 0 50%;
+      border: 5px solid #ffffff;
+      display: flex;
+      align-items: flex-start;
+      background: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 50%, #eeeeee 100%);
+
+      @include lg-min {
+        border-right: 0;
+      }
+
+      @include max-md {
+        order: 1;
+      }
+
+      img {
+        padding: 0 $gap $gap 0;
+
+      }
+
+      p {
+        margin: 0;
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        height: 100%;
+        border-right: 1px solid #dddddd;
+
+        @include max-md {
+          content: none;
+        }
+      }
+    }
+
+    &__item-right {
+      padding: $gap + 5px $gap $gap + 10px;
+      //width: 380px;
+      flex: 1 0 50%;
+      display: flex;
+      align-items: flex-start;
+      border: 5px solid #ffffff;
+      background: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 50%, #eeeeee 100%);
+
+      @include lg-min {
+        border-left: 0;
+      }
+
+      @include max-md {
+        order: 2;
+      }
+
+      img {
+        padding: 0 $gap $gap 0;
+
+
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

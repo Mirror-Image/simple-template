@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-size: contain;
+  background-position: 50% 50%;
+  align-items: center;
+
+  @include max-md {
+    background-size: unset;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: #858585;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+i {
+  color: #424242;
+}
+
+li {
+  line-height: 1.5;
+}
+
+h2 {
+  margin: 10px 0;
+  color: $accent-color;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.container {
+  padding: 0 $gap;
+  max-width: $large;
+  margin: 0 auto;
+  display: flex;
+  flex: 1 0 100%;
+  flex-direction: column;
+}

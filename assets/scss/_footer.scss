@@ -1,0 +1,107 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+
+  &-container {
+    max-width: $large;
+    margin-top: $gap * 2 + 5px;
+    padding: 0 $gap;
+    display: flex;
+    flex: 1 0 100%;
+    justify-content: space-between;
+
+    @include max-md {
+      flex-direction: column;
+    }
+  }
+
+  &-left {
+    display: flex;
+    flex-wrap: wrap;
+
+
+
+    &-image {
+      flex: 0 0 55px;
+    }
+
+    &-sign {
+      flex: 1 0 100px;
+
+      p:first-of-type {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 1;
+        color: $light-color;
+      }
+
+      p:last-of-type {
+        margin: 0;
+      }
+    }
+
+    &-message {
+      margin: $gap $gap * 2 $gap * 2 $gap * 2 + 5px;
+      padding: $gap + 5px;
+      position: relative;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+
+      @include max-md {
+        flex-basis: 100%;
+      }
+
+      @include xsmall {
+        margin-right: 0;
+      }
+
+      p {
+        line-height: 1.55;
+      }
+
+      p:last-of-type {
+        font-style: italic;
+        color: $accent-color;
+        font-size: 0.83rem;
+      }
+
+      &:before {
+        content: url("../img/twitter-speech-bubble.png");
+        position: absolute;
+        top: -19px;
+        left: 0;
+      }
+    }
+  }
+
+  &-right {
+    font-size: 0.9rem;
+
+    &-created-by {
+
+      p {
+        margin: $gap * 4 $gap $gap $gap;
+        text-align: right;
+        color: $light-color;
+        line-height: 1;
+        font-size: 1rem;
+
+        @include max-md {
+          margin-top: $gap * 2;
+          text-align: center;
+        }
+      }
+    }
+
+    &-logo {
+      margin: $gap;
+      text-align: right;
+
+      @include max-md {
+        text-align: center;
+      }
+    }
+  }
+}

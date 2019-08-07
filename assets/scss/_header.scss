@@ -1,0 +1,114 @@
+.header {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+
+  &-logo {
+    flex: 0 0 200px;
+  }
+
+  &-menu {
+    display: flex;
+    flex: 1 0 calc(100% - 200px);
+    justify-content: flex-end;
+
+    &-mobile {
+      position: relative;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 50px;
+      height: 50px;
+      background: rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+
+      @include max-lg {
+        display: flex;
+
+      }
+
+      &-row {
+        position: relative;
+        width: 60%;
+        height: 2px;
+        margin: 2px 0;
+        background-color: $light-color;
+        transition: all 0.5s;
+      }
+
+      &.active .header-menu-mobile-row {
+        &:first-of-type {
+          top: 6px;
+          transform: rotate(-135deg);
+        }
+
+        &:last-of-type {
+          top: -6px;
+          transform: rotate(-225deg);
+        }
+
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      list-style: none;
+      justify-content: flex-end;
+
+      @include max-lg {
+        display: none;
+      }
+
+      &.active {
+        @include max-lg {
+          padding-left: 0;
+          position: absolute;
+          top: 70px;
+          right: 0;
+          left: 0;
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          text-align: center;
+          z-index: 3;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
+
+      &__item {
+        padding: $gap;
+        margin-left: $gap / 2;
+
+        @include max-lg {
+          margin-left: 0;
+        }
+
+        a {
+          color: $light-color;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: $gap;
+
+          @include max-lg {
+             border-radius: 0;
+           }
+        }
+
+        &.active {
+          background: linear-gradient(to bottom, #0f8bbe 0%,#2989d8 50%,#207cca 51%,#0eb7fe 100%);
+          border-radius: $gap;
+
+          @include max-lg {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
