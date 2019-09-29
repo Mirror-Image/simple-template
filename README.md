@@ -1,2 +1,2 @@
 **Check out the result on page:**
-https://maksimborovik.github.io/simple-template/
+https://mirrorimage7.github.io/simple-template/
